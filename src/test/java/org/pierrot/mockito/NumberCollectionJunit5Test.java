@@ -10,7 +10,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
-public class NumberCollectionJunit5Test {
+class NumberCollectionJunit5Test {
     private List<Integer> mockedList;
 
     private NumberCollection numberCollection;
