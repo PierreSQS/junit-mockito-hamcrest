@@ -17,4 +17,16 @@ public class NumberCollection {
 
         return total;
     }
+
+    public int getTotalUsingIterable() {
+        int total = 0;
+        for (int number : numbers) {
+            total += number;
+        }
+        return total;
+    }
+
+    public int getTotalUsingStream()  {
+        return numbers.stream().mapToInt(Integer::intValue).sum();
+    }
 }

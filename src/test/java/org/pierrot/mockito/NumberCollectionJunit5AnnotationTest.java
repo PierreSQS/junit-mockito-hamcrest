@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -39,5 +40,27 @@ class NumberCollectionJunit5AnnotationTest {
 
         verify(mockedList,times(4)).size();
         verify(mockedList,times(3)).get(anyInt());
+    }
+
+    @Test
+    void getTotalUsingIterable() {
+        // Given and When
+        when(mockedList.iterator()).thenReturn(List.of(1,2,3).iterator());
+
+        // Then
+        assertEquals(6, numberCollection.getTotalUsingIterable());
+
+        verify(mockedList).iterator();
+    }
+
+    @Test
+    void getTotalUsingStream() {
+        // Given and When
+        when(mockedList.stream()).thenReturn(Stream.of(1,2,3));
+
+        // Then
+        assertEquals(6, numberCollection.getTotalUsingStream());
+
+        verify(mockedList).stream();
     }
 }
