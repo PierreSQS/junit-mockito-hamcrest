@@ -23,7 +23,13 @@ public class NumberCollectionJunit5Test {
 
     @Test
     void getTotalUsingLoop() {
+        // Given and When
+        when(mockedList.size()).thenReturn(3);
+        when(mockedList.get(0)).thenReturn(1);
+        when(mockedList.get(1)).thenReturn(2);
+        when(mockedList.get(2)).thenReturn(3);
 
+        // Then
         assertEquals(6, numberCollection.getTotalUsingLoop());
 
         verify(mockedList,times(4)).size();
