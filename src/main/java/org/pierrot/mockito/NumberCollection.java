@@ -10,8 +10,8 @@ public class NumberCollection {
     }
 
     public int getTotalUsingLoop() {
-        int total = 0;
-        for (int i = 0; i < numbers.size(); i++) {
+        var total = 0;
+        for (var i = 0; i < numbers.size(); i++) {
             total += numbers.get(i);
         }
 
@@ -19,7 +19,7 @@ public class NumberCollection {
     }
 
     public int getTotalUsingIterable() {
-        int total = 0;
+        var total = 0;
         for (int number : numbers) {
             total += number;
         }
